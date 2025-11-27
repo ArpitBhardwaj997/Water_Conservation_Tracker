@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Water Conservation Tracker</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Smooth scroll effects, navbar shrink on scroll
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector(".navbar");
+            nav.style.padding = window.scrollY > 30 ? "10px 50px" : "20px 60px";
+        });
+
+        function animateCounter(id, value) {
+            let counter = 0;
+            const interval = setInterval(() => {
+                counter += 3;
+                if (counter >= value) clearInterval(interval);
+                document.getElementById(id).innerText = counter + " L";
+            }, 20);
+        }
+
+        animateCounter("todayUsage", 142);
+        animateCounter("monthUsage", 2823);
+
+    </script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <!-- Instead of <img src="assets/images/logo.svg" class="logo" alt="Smart Water Tracker Logo"> -->
+
+<svg class="logo" width="50" height="50" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" stroke="#0077FF" stroke-width="4" fill="#00C6FF"/>
+  <path d="M20 40 L32 24 L44 40" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M20 36 L44 36" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" class="logo" alt="Smart Water Tracker Logo">
+
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="signup.html" class="btn-primary">Get Started</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="title">Smarter Water. Smarter Future 💧</h1>
+        <p class="subtitle">Track usage, receive AI insights, earn badges, and protect the planet</p>
+        <button class="cta-btn" onclick="location.href='dashboard.html'">Explore Dashboard →</button>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>📊 Smart Analytics</h3>
+            <p>Visualize water usage using AI powered graphs.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🤖 AI Suggestions</h3>
+            <p>Personalized water-saving tips based on patterns.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🏆 Badges</h3>
+            <p>Save water and unlock achievements.</p>
+        </div>
+    </section>
+
+    <footer>© 2025 Smart Water Tracker.
+        <footer class="water-footer">
+  <div class="footer-content">
+
+    <div class="footer-about">
+      <h3>💧 Water Conservation Matters</h3>
+      <p>Water is a precious resource essential for life. Conserving water helps protect our planet,  
+         saves money, and ensures availability for future generations.</p>
+      <p>Join us in making a difference by using water wisely every day.</p>
+    </div>
+
+    <div class="footer-images">
+      <img src="https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg?auto=compress&cs=tinysrgb&h=150" alt="Water Drops">
+      <img src="https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&h=150" alt="Water Conservation">
+      <img src="https://images.pexels.com/photos/110580/pexels-photo-110580.jpeg?auto=compress&cs=tinysrgb&h=150" alt="Save Water">
+    </div>
+
+    <div class="footer-facts">
+      <h3>🌍 Quick Water Facts</h3>
+      <ul>
+        <li>Only <strong>1%</strong> of Earth’s water is fresh and accessible for human use.</li>
+        <li>A dripping faucet can waste over <strong>3,000 gallons</strong> of water per year.</li>
+        <li>Fixing leaks can save homeowners <strong>up to 10%</strong> on their water bills.</li>
+        <li>About <strong>70%</strong> of freshwater is used in agriculture worldwide.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Smart Water Tracker. Save Water, Save Life.</p>
+  </div>
+</footer>
+
+    </footer>
+
+    <script src="assets/js/responsive.js"></script>
+</body>
+
+</html>

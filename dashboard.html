@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Explore | Water Conservation Dashboard</title>
+    <link rel="stylesheet" href="explore.css">
+    <link rel="stylesheet" href="style3.css">
+    <script src="explore.js" defer></script>
+    <script>
+        document.getElementById("learnMoreBtn").addEventListener("click", () => {
+            document.getElementById("infoSection").scrollIntoView({ behavior: "smooth" });
+        });
+
+        // Animated global stats
+        function animateValue(id, end) {
+            let start = 0;
+            const timer = setInterval(() => {
+                start++;
+                document.getElementById(id).innerText = start;
+                if (start === end) clearInterval(timer);
+            }, 30);
+        }
+
+        animateValue("usage1", 1);   // Only 1% fresh water
+        animateValue("usage2", 771); // 771M lack clean drinking water
+        animateValue("usage3", 70);  // 70% used in agriculture
+
+        // show popup info
+        function openInfo(type) {
+            let message = "";
+            if (type === "limited") {
+                message = "Only 1% water is drinkable. Most freshwater is locked in glaciers. If wastage continues, global shortages will rise by 40% by 2050.";
+            } else if (type === "nature") {
+                message = "Rivers and wetlands are disappearing. Water scarcity kills ecosystems and forces animals to migrate or die.";
+            } else if (type === "bills") {
+                message = "Using low-flow taps, recycling RO water, and fixing leaks can save thousands every year.";
+            }
+            alert(message);
+        }
+
+        document.getElementById("learnMoreBtn").addEventListener("click", () => {
+  // Example scroll to another section, change '#infoSection' to your target ID
+  const target = document.getElementById("infoSection");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  } else {
+    alert("More info coming soon!");
+  }
+});
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <h2>🌎 Explore Water Conservation</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Water is Life. Save Every Drop 💧</h1>
+        <p>Discover how water usage impacts our planet and how you can conserve it.</p>
+       <section class="water-density-section">
+  <h2>Understanding Water Density 💧</h2>
+  <p>Water density is a key property affecting everything from aquatic life to climate.  
+     Pure water has a density of approximately <strong>1 g/cm³</strong> at 4°C, which is optimal for most freshwater ecosystems.</p>
+
+  <div class="density-content">
+    <div class="text-block">
+      <p>Density influences buoyancy and temperature layering in lakes and oceans,  
+         supporting biodiversity and water quality. Changes in water density due to pollution or temperature shifts can disrupt these balances.</p>
+      <button id="learnMoreBtn">Learn More ↓</button>
+    </div>
+
+    <div class="image-block">
+      <img src="https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&h=450" alt="Water Density Visualization">
+      <p class="caption">Water density visualized in natural environment</p>
+    </div>
+  </div>
+</section>
+
+    </section>
+
+    <section class="history">
+        <h2>Water Through The Ages ⏳</h2>
+        <p>Understanding how humans managed water in the past helps us conserve it better today.</p>
+
+        <div class="timeline">
+
+            <div class="event">
+                <img src="https://images.pexels.com/photos/3651613/pexels-photo-3651613.jpeg"
+                    alt="Ancient Civilizations water systems">
+                <h3>🔹 Ancient Civilizations</h3>
+                <p>Indus Valley, Mesopotamia, and Egypt built advanced canals and reservoirs to protect water resources.
+                </p>
+            </div>
+
+            <div class="event">
+                <img src="https://images.pexels.com/photos/158607/city-water-dam-architecture-158607.jpeg"
+                    alt="Medieval Era water well and harvesting">
+                <h3>🔹 Medieval Era</h3>
+                <p>Communities relied on wells and rainwater harvesting. Water was treated as a sacred resource.</p>
+            </div>
+
+            <div class="event">
+                <img src="https://images.pexels.com/photos/4427434/pexels-photo-4427434.jpeg"
+                    alt="Industrial Revolution water pollution">
+                <h3>🔹 Industrial Revolution</h3>
+                <p>Machines increased water demand, leading to pollution — the beginning of water scarcity issues today.
+                </p>
+            </div>
+
+            <div class="event">
+                <img src="https://images.pexels.com/photos/339629/pexels-photo-339629.jpeg"
+                    alt="Modern Age water technology">
+                <h3>🔹 Modern Age</h3>
+                <p>Smart meters & AI systems now allow real-time tracking, waste reduction, and water-efficient living.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="info" id="infoSection">
+        <h2>Why Should We Save Water?</h2>
+        <div class="info-grid">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/7443841/pexels-photo-7443841.jpeg" alt="Save Water">
+                <h3>Limited Resource</h3>
+                <p>Only 1% of Earth's water is drinkable. Conserving water ensures sustainability for future
+                    generations.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1206420/pexels-photo-1206420.jpeg" alt="Nature">
+                <h3>Protect Nature</h3>
+                <p>Freshwater ecosystems rely on balanced water usage. Overuse disrupts biodiversity and wildlife.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/615348/pexels-photo-615348.jpeg" alt="Save Money">
+                <h3>Reduce Bills</h3>
+                <p>Efficient water usage can reduce household water costs by up to 40%.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tips">
+        <h2>Top Water Saving Tips</h2>
+        <ul>
+            <li>🚿 Take shorter showers (5 minutes max)</li>
+            <li>💧 Fix leaky taps immediately</li>
+            <li>🪣 Use a bucket instead of a hose</li>
+            <li>🌿 Water your plants early morning</li>
+            <li>♻ Reuse RO wastewater</li>
+        </ul>
+    </section>
+
+    <section class="stats">
+        <h2>Global Water Facts 🌍</h2>
+        <div class="stat-container">
+            <div class="stat"><span id="usage1">0</span>% Fresh water</div>
+            <div class="stat"><span id="usage2">0</span>M People lack clean water</div>
+            <div class="stat"><span id="usage3">0</span>% Used in agriculture</div>
+        </div>
+    </section>
+
+    <footer>© 2025 Smart Water Tracker | Save Water, Save Life</footer>
+
+</body>
+
+</html>

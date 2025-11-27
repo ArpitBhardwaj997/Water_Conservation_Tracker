@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Signup | Water Tracker</title>
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function signupUser() {
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
+
+  if (email === "" || pass === "") {
+    alert("Please fill all fields!");
+    return;
+  }
+
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("userPassword", pass);
+  alert("Signup Successful! Please Login.");
+  window.location.href = "login.html";
+}
+
+function loginUser() {
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
+
+  if (email === localStorage.getItem("userEmail") && pass === localStorage.getItem("userPassword")) {
+    alert("Login Successful!");
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Invalid Credentials ⚠️");
+  }
+}
+
+    </script>
+</head>
+
+<body>
+
+    <div class="auth-container">
+        <h2>Create Account 💧</h2>
+        <p>Join the water-saving revolution</p>
+
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="signupUser()">Signup</button>
+
+        <p class="switch">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+</body>
+
+</html>
